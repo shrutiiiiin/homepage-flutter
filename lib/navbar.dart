@@ -23,15 +23,33 @@ class NavBar extends StatelessWidget {
             ),
           ),
           ListTile(
+            leading: Icon(Icons.home),
             title: Text('Home'),
             onTap: () {},
           ),
           ListTile(
+            leading: Icon(Icons.notifications_none_outlined),
+            title: Text('Notifications'),
+            onTap: () {},
+          ),
+          ListTile(
+            leading: Icon(Icons.share_outlined),
+            title: Text('Share'),
+            onTap: () {},
+          ),
+          ListTile(
+            leading: Icon(Icons.settings_outlined),
+            title: Text('Settings'),
+            onTap: () {},
+          ),
+          ListTile(
+            leading: Icon(Icons.help),
             title: Text('About'),
             onTap: () {},
           ),
           ListTile(
-            title: Text('Settings'),
+            leading: Icon(Icons.logout_outlined),
+            title: Text('Logout'),
             onTap: () {},
           ),
         ],
