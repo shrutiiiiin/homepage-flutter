@@ -48,6 +48,11 @@ class _onboardingState extends State<onboarding> {
       children: [
         PageView(
           controller: _controller,
+          onPageChanged: (index) {
+            setState(() {
+              onLastpage = (index == 2);
+            });
+          },
           children: [
             intropage1(),
             intropage2(),
@@ -59,12 +64,25 @@ class _onboardingState extends State<onboarding> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Text('SKip'),
               SmoothPageIndicator(
                 controller: _controller,
                 count: 3,
               ),
-              Text('Next'),
+              onLastpage
+                  ? GestureDetector(
+                      child: Text('Skip'),
+                      onTap: () {
+                        _controller.jumpToPage(2);
+                      },
+                    )
+                  : GestureDetector(
+                      child: Text('Next'),
+                      onTap: () {
+                        _controller.nextPage(
+                            duration: Duration(milliseconds: 500),
+                            curve: Curves.easeIn);
+                      },
+                    ),
             ],
           ),
         ),

@@ -6,8 +6,12 @@ class intropage3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Image(
-        image: AssetImage('assests/images/bg3.jpg'),
+      color: Colors.indigo[100],
+      child: Center(
+        child: Text(
+          'this is page 3',
+          style: TextStyle(fontWeight: FontWeight.w300),
+        ),
       ),
     );
   }
