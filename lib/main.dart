@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'navbar.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'card.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 void main() {
   runApp(homepage());
@@ -18,7 +19,7 @@ class homepage extends StatelessWidget {
         appBar: AppBar(
           title: Text(''),
           centerTitle: true,
-          backgroundColor: Colors.pink[100],
+          backgroundColor: Colors.amber[100],
         ),
         drawer: Drawer(
           child: NavBar(),
@@ -43,12 +44,15 @@ class _onboardingState extends State<onboarding> {
       children: [
         Container(
           child: Image(
-            image: AssetImage('assests/images/bg1.jpg'),
+            height:
+                double.maxFinite, //// USE THIS FOR THE MATCH WIDTH AND HEIGHT
+            width: double.maxFinite,
+            image: AssetImage('assests/images/design.png'),
           ),
         ),
         Container(
           child: Image(
-            image: AssetImage('assests/images/bg2.jpg'),
+            image: AssetImage('assests/images/design2.png'),
           ),
         ),
         Container(
