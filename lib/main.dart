@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:homepagedemo/intropage/intro_pg1.dart';
+import 'package:homepagedemo/intropage/intro_pg2.dart';
+import 'package:homepagedemo/intropage/intro_pg3.dart';
 import 'navbar.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'card.dart';
@@ -38,26 +41,31 @@ class onboarding extends StatefulWidget {
 }
 
 class _onboardingState extends State<onboarding> {
+  PageController _controller = PageController();
   @override
   Widget build(BuildContext context) {
-    return PageView(
+    return Stack(
       children: [
-        Container(
-          child: Image(
-            height:
-                double.maxFinite, //// USE THIS FOR THE MATCH WIDTH AND HEIGHT
-            width: double.maxFinite,
-            image: AssetImage('assests/images/design.png'),
-          ),
+        PageView(
+          controller: _controller,
+          children: [
+            intropage1(),
+            intropage2(),
+            intropage3(),
+          ],
         ),
         Container(
-          child: Image(
-            image: AssetImage('assests/images/design2.png'),
-          ),
-        ),
-        Container(
-          child: Image(
-            image: AssetImage('assests/images/bg3.jpg'),
+          alignment: Alignment(0, 0.75),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Text('SKip'),
+              SmoothPageIndicator(
+                controller: _controller,
+                count: 3,
+              ),
+              Text('Next'),
+            ],
           ),
         ),
       ],
