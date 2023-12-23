@@ -43,14 +43,14 @@ class _onboardingState extends State<onboarding> {
               GestureDetector(
                 child: Text('Done'),
                 onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context){
-                  return homepage();
-                  },
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) {
+                      return homepage();
+                    }),
                   );
-                  },
-
-    
-                    ),
+                },
+              ),
               GestureDetector(
                 child: Text('Next'),
                 onTap: () {
